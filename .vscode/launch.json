@@ -13,6 +13,14 @@
       "postDebugTask": "docker-down"
     },
     {
+      "name": "Start Mnestix without API",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "docker compose -f compose.yml -f docker-compose/compose.dev.yml -p mnestix-browser up --remove-orphans -d aas-environment mongodb submodel-registry aas-discovery aas-registry && yarn dev",
+      "sourceMaps": true,
+      "postDebugTask": "docker-down"
+    },
+    {
       "name": "Start Mnestix with RBAC",
       "type": "node-terminal",
       "request": "launch",
